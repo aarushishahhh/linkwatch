@@ -85,7 +85,7 @@ func main() {
 
 func initDB(databaseURL string) (*sql.DB, error) {
 	if databaseURL == "" {
-		// Default to SQLite for development
+		// Supporting SQLite
 		databaseURL = "sqlite3://linkwatch.db"
 	}
 
