@@ -4,17 +4,16 @@
 
 - **HTTP API**: RESTful endpoints for URL registration and result retrieval
 - **Background Checker**: Worker pool that periodically checks registered URLs
-- **Storage Layer**: Abstracted database operations (PostgreSQL/SQLite support)
+- **Storage Layer**: Abstracted database operations (SQLite support)
 - **Configuration**: Environment-based configuration with sensible defaults
 
 ## Design Decisions
 
 ### 1. Database Choice & Schema Design
 
-**Decision**: Support both PostgreSQL (production) and SQLite (development/testing)
+**Decision**: Support SQLite (development/testing)
 
 **Rationale**:
-- PostgreSQL provides robust production features (concurrent access, ACID guarantees)
 - SQLite enables easy local development and testing without external dependencies
 - Abstract storage layer allows swapping implementations
 
