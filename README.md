@@ -30,7 +30,7 @@ go run main.go
 
 # Or with PostgreSQL
 export DATABASE_URL="postgres://user:password@localhost:5432/linkwatch?sslmode=disable"
-go run main.go
+go run ./project/internal
 ```
 
 ### Using Docker
