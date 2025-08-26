@@ -41,38 +41,6 @@ docker build -t linkwatch .
 
 # Run with SQLite (data persisted in container)
 docker run -p 8080:8080 linkwatch
-
-# Run with PostgreSQL
-docker run -p 8080:8080 \
-  -e DATABASE_URL="postgres://user:password@host:5432/linkwatch?sslmode=disable" \
-  linkwatch
-```
-
-### Using Docker Compose (with PostgreSQL)
-
-```yaml
-version: '3.8'
-services:
-  app:
-    build: .
-    ports:
-      - "8080:8080"
-    environment:
-      - DATABASE_URL=postgres://linkwatch:password@db:5432/linkwatch?sslmode=disable
-    depends_on:
-      - db
-
-  db:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: linkwatch
-      POSTGRES_USER: linkwatch
-      POSTGRES_PASSWORD: password
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
 ```
 
 ## Configuration
